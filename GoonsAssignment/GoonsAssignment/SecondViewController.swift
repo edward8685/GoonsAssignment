@@ -16,8 +16,7 @@ class SecondViewController: UIViewController {
     }
     
     lazy var statusBarView: UIView = {
-        let statusBarframe = view.window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
-        let view = UIView(frame: statusBarframe)
+        let view = UIView(frame: statusBarFrame)
         view.isOpaque = false
         view.backgroundColor = .clear
         return view
@@ -97,7 +96,7 @@ class SecondViewController: UIViewController {
         subtitleLabel.font = .systemFont(ofSize: 20, weight: .regular)
         subtitleLabel.sizeToFit()
         
-        let stackView = UIStackView(frame: CGRect(x: 20, y: statusBarframe.height + 50, width: 100, height: 50))
+        let stackView = UIStackView(frame: CGRect(x: 20, y: navBarFrame.height + 50, width: 100, height: 50))
         
         stackView.axis = .vertical
         stackView.addArrangedSubview(titleLabel)

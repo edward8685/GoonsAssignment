@@ -17,11 +17,15 @@ extension UIViewController {
         return UIScreen.main.bounds.height
     }
     
-    var statusBarframe: CGRect {
+    var navBarFrame: CGRect {
         return navigationController?.navigationBar.frame ?? CGRect.zero
+    }
+    
+    var statusBarFrame: CGRect {
+        return view.window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
     }
 
     var topbarHeight: CGFloat {
-        return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) + statusBarframe.height
+        return statusBarFrame.height + navBarFrame.height
     }
 }
